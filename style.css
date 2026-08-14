@@ -9,22 +9,26 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 20px 50px;
+  padding: 20px 10px;
   background: white;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
   position: sticky;
   top: 0;
+  z-index: 9999;
 }
 
 .logo {
   font-size: 100px;
+  margin-left: -30px;
   font-weight: bold;
 }
 .logo img {
-  height: 125px;
-  margin-top: 200px;
+  height: 55px;
+  margin-top: 40px;
   object-fit: contain;
 }
+
 
 .logo span {
   color: #ff3f6c;
@@ -205,27 +209,27 @@ nav a:hover {
 
     .hero {
         min-height: 600px;
-
-        background-position: center;
+        background-position: center center;
+        background-size: cover;
     }
 
     .hero-content {
         padding: 20px;
+        text-align: center;
     }
 
     .hero-content h1 {
-        font-size: 55px;
-
-        letter-spacing: -2px;
-    }
+    font-size: 40px;
+    line-height: 1.1;
+}
 
     .hero-content p {
         font-size: 15px;
+        line-height: 1.6;
     }
 
     .hero-label {
         font-size: 10px;
-
         letter-spacing: 3px;
     }
 

@@ -698,64 +698,72 @@ footer {
    MOBILE
 ========================================= */
 
-@media (max-width: 900px) {
-
-    .contact-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-
-    .message-container {
-        grid-template-columns: 1fr;
-
-        gap: 50px;
-    }
-
-}
-
-
 @media (max-width: 650px) {
 
     .navbar {
-        height: 70px;
+        height: auto;
+        min-height: 70px;
 
-        padding: 0 20px;
+        padding: 8px 15px;
+
+        display: flex;
+        align-items: center;
+
+        gap: 10px;
     }
 
+
+    /* LOGO */
+
+    .logo img {
+        width: 105px;
+        height: auto;
+
+        margin: 0;
+    }
+
+
+    /* NAVIGATION */
 
     .nav-links {
-        display: none;
-
-        position: absolute;
-
-        top: 70px;
-
-        left: 0;
-
-        width: 100%;
-
-        padding: 25px;
-
-        background: white;
-
-        flex-direction: column;
-
-        gap: 20px;
-
-        border-bottom: 1px solid #eee;
-    }
-
-
-    .nav-links.show {
         display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
+
+        flex: 1;
+
+        scrollbar-width: none;
     }
 
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .nav-links a {
+        font-size: 11px;
+
+        white-space: nowrap;
+
+        margin: 0;
+    }
+
+
+    /* HIDE MENU BUTTON */
 
     .menu-btn {
-        display: block;
+        display: none;
     }
 
+
+    /* CONTACT HERO */
 
     .contact-hero {
         min-height: 350px;
@@ -766,6 +774,8 @@ footer {
         font-size: 48px;
     }
 
+
+    /* SECTIONS */
 
     .contact-section,
     .message-section {

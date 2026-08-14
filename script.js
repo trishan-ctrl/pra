@@ -5,32 +5,32 @@ document.addEventListener("DOMContentLoaded", function () {
   const products = [
     {
       name: "Berry Motif Kurta Set",
-      price: 499,
+      price: 699,
       image: "image/top1.jpeg"
     },
     {
       name: "Midnight floral top",
-      price: 499,
+      price: 649,
       image: "image/top2.jpeg"
     },
    {
       name: "Rose Garden Kurta Set",
-      price: 499,
+      price: 799,
       image: "image/top3.jpeg"
     },
     {
       name: "Lilac Floral Tie-Up Kurta Set",
-      price: 399,
+      price: 649,
       image: "image/top4.jpeg"
     },
     {
       name: "Pink Bloom Kurta Set",
-      price: 499,
+      price: 799,
       image: "image/top5.jpeg"
     },
     {
       name: "Orange Floral Kurta Set",
-      price: 699,
+      price: 799,
       image: "image/top6.jpeg"
     },
     {
@@ -40,17 +40,17 @@ document.addEventListener("DOMContentLoaded", function () {
     },
      {
       name: "Aqua Semi-Bandhani Kurta Set",
-      price: 699,
+      price: 899,
       image: "image/top8.jpeg"
     },
      {
-      name: "Pink Semi-Bandhani Kurta Set",
-      price: 699,
+      name: "Red Semi-Bandhani Kurta Set",
+      price: 1200,
       image: "image/top9.jpeg"
     },
      {
       name: "Olive Paisley Kurta Set",
-      price: 699,
+      price: 649,
       image: "image/top10.jpeg"
     },
      {
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
      {
       name: "Red Polka Dot Kurta Set",
-      price: 699,
+      price: 649,
       image: "image/top12.jpeg"
     }
   ];
