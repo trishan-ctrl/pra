@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const products = [
     {
-      name: "Teal bloom kurta",
+      name: "Teal bloom kurta set",
       price: 649,
       image: "image/top1.jpeg"
     },
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
       image: "image/top7.jpeg"
     },
      {
-      name: "Aqua Semi-Bandhani Kurta Set",
+      name: "Aqua Semi-Bandhani Kurta",
       price: 899,
       image: "image/top8.jpeg"
     },
