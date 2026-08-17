@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const products = [
     {
-      name: "Berry Motif Kurta Set",
-      price: 699,
+      name: "Teal bloom kurta",
+      price: 649,
       image: "image/top1.jpeg"
     },
     {
