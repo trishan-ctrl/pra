@@ -62,6 +62,16 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "Red Polka Dot Kurta Set",
       price: 649,
       image: "image/top12.jpeg"
+    },
+    {
+      name: "Indigo Elegance Kurta Set",
+      price: 899,
+      image: "image/top13.jpeg"
+    },
+    {
+      name: "Emerald Bloom Kurta Set",
+      price: 799,
+      image: "image/top14.jpeg"
     }
   ];
 
