@@ -4,19 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const products = [
     {
-      name: "Teal bloom kurta set",
-      price: 649,
-      image: "image/top1.jpeg"
-    },
-    {
       name: "Midnight floral top",
       price: 649,
       image: "image/top2.jpeg"
-    },
-   {
-      name: "Rose Garden Kurta Set",
-      price: 799,
-      image: "image/top3.jpeg"
     },
     {
       name: "Lilac Floral Tie-Up Kurta Set",
@@ -24,39 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
       image: "image/top4.jpeg"
     },
     {
-      name: "Pink Bloom Kurta Set",
-      price: 799,
-      image: "image/top5.jpeg"
-    },
-    {
-      name: "Orange Floral Kurta Set",
-      price: 799,
-      image: "image/top6.jpeg"
-    },
-    {
       name: "Royal Plum Motif Kurta Set",
       price: 699,
       image: "image/top7.jpeg"
     },
      {
-      name: "Aqua Semi-Bandhani Kurta",
-      price: 899,
-      image: "image/top8.jpeg"
-    },
-     {
-      name: "Red Semi-Bandhani Kurta Set",
-      price: 1200,
-      image: "image/top9.jpeg"
-    },
-     {
       name: "Olive Paisley Kurta Set",
       price: 649,
       image: "image/top10.jpeg"
-    },
-     {
-      name: "Lavender Bloom Kurta Set",
-      price: 699,
-      image: "image/top11.jpeg"
     },
      {
       name: "Red Polka Dot Kurta Set",
