@@ -72,7 +72,37 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "Emerald Bloom Kurta Set",
       price: 799,
       image: "image/top14.jpeg"
-    }
+    },
+    {
+      name: "Maroon printed kurta set",
+      price: 649,
+      image: "image/top15.jpeg"
+    },
+    {
+      name: "Pink floral kurta set",
+      price: 879,
+      image: "image/top16.jpeg"
+    },
+    {
+      name: "Teal printed kurta set",
+      price: 699,
+      image: "image/top17.jpeg"
+    },
+    {
+      name: "Coral Printed kurta set",
+      price: 749,
+      image: "image/top18.jpeg"
+    },
+    {
+      name: "Purple printed kurta set",
+      price: 649,
+      image: "image/top19.jpeg"
+    },
+    {
+      name: "Navy floral kurta set",
+      price: 649,
+      image: "image/top20.jpeg"
+    },
   ];
 
   const container = document.getElementById("products");
