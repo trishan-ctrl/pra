@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+console.log("Script loaded");
+  const phoneNumber = "918431905840";
 
-  const phoneNumber = "+918431905840"; 
-
+  // PRODUCTS
   const products = [
     {
       name: "Midnight floral top",
@@ -18,12 +19,12 @@ document.addEventListener("DOMContentLoaded", function () {
       price: 699,
       image: "image/top7.jpeg"
     },
-     {
+    {
       name: "Olive Paisley Kurta Set",
       price: 649,
       image: "image/top10.jpeg"
     },
-     {
+    {
       name: "Red Polka Dot Kurta Set",
       price: 649,
       image: "image/top12.jpeg"
@@ -67,142 +68,221 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "Navy floral kurta set",
       price: 649,
       image: "image/top20.jpeg"
-    },
+    }
   ];
 
+
+  // PRODUCT CONTAINER
   const container = document.getElementById("products");
 
-  products.forEach(p => {
-    const card = document.createElement("div");
-    card.className = "card";
 
-    card.innerHTML = `
-      <img src="${p.image}">
-      <h3>${p.name}</h3>
-      <p>₹${p.price}</p>
-      <button class="order-btn">Order on WhatsApp</button>
-    `;
+  // DISPLAY PRODUCTS
+  if (container) {
 
-    const btn = card.querySelector(".order-btn");
+    products.forEach((p, index) => {
 
-    btn.addEventListener("click", () => {
-      const msg = `Hi, I want to order: ${p.name}`;
-      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`;
-      window.open(url, "_blank");
+      const card = document.createElement("div");
+
+      card.className = "card";
+
+      card.innerHTML = `
+        <img src="${p.image}" alt="${p.name}">
+
+        <h3>${p.name}</h3>
+
+        <p>₹${p.price}</p>
+
+        <div class="product-buttons">
+
+          <button class="cart-btn" data-index="${index}">
+            🛒 Add to Cart
+          </button>
+
+          <button class="order-btn" data-index="${index}">
+            Order on WhatsApp
+          </button>
+
+        </div>
+      `;
+
+      container.appendChild(card);
     });
 
-    container.appendChild(card);
-  });
 
-});
+    // ADD TO CART BUTTON
+    document.querySelectorAll(".cart-btn").forEach(button => {
 
-// SCROLL
-function scrollToProducts() {
-  document.getElementById("products").scrollIntoView({
-    behavior: "smooth"
-  });
-}
-document.addEventListener("DOMContentLoaded", function () {
+      button.addEventListener("click", function () {
 
-    /* =====================================
-       YOUR WHATSAPP NUMBER
-    ===================================== */
+        const index = this.dataset.index;
 
-    const phoneNumber = "+918431905840";
+        addToCart(products[index]);
+
+      });
+
+    });
 
 
-    /* =====================================
-       
-    ===================================== */
+    // WHATSAPP BUTTON
+    document.querySelectorAll(".order-btn").forEach(button => {
 
-    const menuBtn = document.getElementById("menuBtn");
+      button.addEventListener("click", function () {
 
-    const navLinks = document.querySelector(".nav-links");
+        const index = this.dataset.index;
+
+        const product = products[index];
+
+        const message =
+          `Hi, I want to order: ${product.name}%0APrice: ₹${product.price}`;
+
+        window.open(
+          `https://wa.me/${phoneNumber}?text=${message}`,
+          "_blank"
+        );
+
+      });
+
+    });
+
+  }
 
 
-    if (menuBtn) {
+  // ADD PRODUCT TO CART
+  function addToCart(product) {
 
-        menuBtn.addEventListener("click", function () {
+    let cart = JSON.parse(localStorage.getItem("dhaaraCart")) || [];
 
-            navLinks.classList.toggle("show");
+    const existingProduct = cart.find(
+      item => item.name === product.name
+    );
 
-        });
+    if (existingProduct) {
+
+      existingProduct.quantity += 1;
+
+    } else {
+
+      cart.push({
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        quantity: 1
+      });
 
     }
 
+    localStorage.setItem("dhaaraCart", JSON.stringify(cart));
 
-    /* =====================================
-       CONTACT FORM
-    ===================================== */
+    updateCartCount();
 
-    const contactForm =
-        document.getElementById("contactForm");
+    alert(`${product.name} added to cart 🛒`);
 
-
-    contactForm.addEventListener("submit", function (event) {
-
-        event.preventDefault();
+  }
 
 
-        const name =
-            document.getElementById("name").value.trim();
+  // UPDATE CART COUNT
+  function updateCartCount() {
+
+    const cartCount = document.getElementById("cart-count");
+
+    if (!cartCount) return;
+
+    const cart =
+      JSON.parse(localStorage.getItem("dhaaraCart")) || [];
+
+    const totalItems = cart.reduce(
+      (total, item) => total + item.quantity,
+      0
+    );
+
+    cartCount.textContent = totalItems;
+
+  }
 
 
-        const contact =
-            document.getElementById("contact").value.trim();
+  // MOBILE MENU
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (menuBtn && navLinks) {
+
+    menuBtn.addEventListener("click", function () {
+      navLinks.classList.toggle("active");
+    });
+
+  }
 
 
-        const subject =
-            document.getElementById("subject").value;
+  // CONTACT FORM
+  const contactForm = document.getElementById("contactForm");
+
+  if (contactForm) {
+
+    contactForm.addEventListener("submit", function (e) {
+
+      e.preventDefault();
+
+      const name =
+        document.getElementById("name").value;
+
+      const contact =
+        document.getElementById("contact").value;
+
+      const subject =
+        document.getElementById("subject").value;
+
+      const message =
+        document.getElementById("message").value;
 
 
-        const message =
-            document.getElementById("message").value.trim();
+      if (!name || !contact || !message) {
+
+        alert("Please fill all required fields.");
+
+        return;
+
+      }
 
 
-        /* CHECK EMPTY FIELDS */
-
-        if (!name || !contact || !message) {
-
-            alert("Please fill in all required fields.");
-
-            return;
-
-        }
+      const whatsappMessage =
+        `Hello StyleWithDhaara!%0A%0A` +
+        `Name: ${name}%0A` +
+        `Contact: ${contact}%0A` +
+        `Subject: ${subject}%0A` +
+        `Message: ${message}`;
 
 
-        /* CREATE WHATSAPP MESSAGE */
-
-        const whatsappMessage =
-`Hello StyleWithDhaara! 👋
-
-I would like to make an enquiry.
-
-Name: ${name}
-
-Contact: ${contact}
-
-Subject: ${subject}
-
-Message:
-${message}
-
-Thank you.`;
+      window.open(
+        `https://wa.me/${phoneNumber}?text=${whatsappMessage}`,
+        "_blank"
+      );
 
 
-        /* OPEN WHATSAPP */
-const encodedMessage = encodeURIComponent(whatsappMessage);
-
-// Try opening WhatsApp app directly
-const whatsappAppURL =
-    `whatsapp://send?phone=${phoneNumber}&text=${encodedMessage}`;
-
-window.location.href = whatsappAppURL;
-
-        /* CLEAR FORM */
-
-        contactForm.reset();
+      contactForm.reset();
 
     });
 
+  }
+
+
+  // INITIAL CART COUNT
+  updateCartCount();
+
 });
+
+
+// HERO BUTTON
+function scrollToProducts() {
+
+  const products =
+    document.getElementById("products");
+
+  if (products) {
+
+    products.scrollIntoView({
+      behavior: "smooth"
+    });
+
+  }
+
+}
