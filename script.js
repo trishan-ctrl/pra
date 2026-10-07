@@ -68,7 +68,52 @@ console.log("Script loaded");
       name: "Navy floral kurta set",
       price: 649,
       image: "image/top20.jpeg"
-    }
+    },
+      {
+      name: "Teal printed kurta set",
+      price: 700,
+      image: "image/top21.jpeg"
+    },
+     {
+      name: "Yellow floral sleeveless set",
+      price: 700,
+      image: "image/top22.jpeg"
+    },
+     {
+      name: "Olive green printed suit",
+      price: 900,
+      image: "image/top23.jpeg"
+    },
+     {
+      name: "Purple gold embroidered kurta set",
+      price: 900,
+      image: "image/top24.jpeg"
+    },
+     {
+      name: "Rust floral kurta set",
+      price: 700,
+      image: "image/top25.jpeg"
+    },
+     {
+      name: "Grey striped kurta set",
+      price: 600,
+      image: "image/top26.jpeg"
+    },
+     {
+      name: "Red Anarkali set",
+      price: 800,
+      image: "image/top27.jpeg"
+    },
+     {
+      name: "Navy blue Anarkali set",
+      price: 800,
+      image: "image/top28.jpeg"
+    },
+    {
+      name: "Ivory sleeveless kurta set",
+      price: 700,
+      image: "image/top29.jpeg"
+    }  
   ];
 
 
