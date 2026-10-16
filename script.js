@@ -113,7 +113,38 @@ console.log("Script loaded");
       name: "Ivory sleeveless kurta set",
       price: 700,
       image: "image/top29.jpeg"
-    }  
+    }, 
+    {
+      name: "Navy elegance kurta set",
+      price: 800,
+      image: "image/top30.jpeg"
+    }, 
+    {
+      name: "Midnight bloom short kurti",
+      price: 450,
+      image: "image/top31.jpeg"
+    }, 
+    {
+      name: "Noir Muse short kurti",
+      price: 450,
+      image: "image/top32.jpeg"
+    },
+     {
+      name: "Mocha Charm short kurti",
+      price: 500,
+      image: "image/top33.jpeg"
+    },
+     {
+      name: "Blush petal short kurti",
+      price: 450,
+      image: "image/top34.jpeg"
+    },
+        {
+      name: "Indigo Bloom short kurti",
+      price: 600,
+      image: "image/top35.jpeg"
+    }
+    
   ];
 
 
