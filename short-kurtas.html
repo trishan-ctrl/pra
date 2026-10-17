@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Short Kurtas | STYLEWITHDHAARA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">
+    <img src="image/logo11.jpeg" alt="StyleWithDhaara Logo">
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About Us</a>
+    <a href="cart.html" class="cart-link">
+      🛒 Cart <span id="cart-count">0</span>
+    </a>
+  </nav>
+</header>
+
+<!-- PAGE HEADING -->
+<section class="kurta-heading">
+  <h1>Short Kurtas Collection</h1>
+  <p>Beautiful styles for your everyday wardrobe.</p>
+</section>
+
+<!-- KURTA PRODUCTS -->
+<section class="kurta-collection">
+  <div class="kurta-products">
+
+    <!-- KURTA 1 -->
+    <div class="kurta-card">
+      <img src="image/shortkurta1.jpeg" alt="Floral Short Kurta">
+      <h3>Floral Short Kurta</h3>
+      <p class="kurta-price">₹649</p>
+
+      <button class="kurta-cart-btn"
+        onclick="addKurtaToCart('Floral Short Kurta', 649, 'image/shortkurta1.jpeg')">
+        Add to Cart
+      </button>
+
+      <button class="kurta-whatsapp-btn"
+        onclick="orderKurtaOnWhatsApp('Floral Short Kurta', 649)">
+        Order on WhatsApp
+      </button>
+    </div>
+
+    <!-- KURTA 2 -->
+    <div class="kurta-card">
+      <img src="image/shortkurta2.jpeg" alt="Printed Short Kurta">
+      <h3>Printed Short Kurta</h3>
+      <p class="kurta-price">₹699</p>
+
+      <button class="kurta-cart-btn"
+        onclick="addKurtaToCart('Printed Short Kurta', 699, 'image/shortkurta2.jpeg')">
+        Add to Cart
+      </button>
+
+      <button class="kurta-whatsapp-btn"
+        onclick="orderKurtaOnWhatsApp('Printed Short Kurta', 699)">
+        Order on WhatsApp
+      </button>
+    </div>
+
+    <!-- KURTA 3 -->
+    <div class="kurta-card">
+      <img src="image/shortkurta3.jpeg" alt="Casual Short Kurta">
+      <h3>Casual Short Kurta</h3>
+      <p class="kurta-price">₹599</p>
+
+      <button class="kurta-cart-btn"
+        onclick="addKurtaToCart('Casual Short Kurta', 599, 'image/shortkurta3.jpeg')">
+        Add to Cart
+      </button>
+
+      <button class="kurta-whatsapp-btn"
+        onclick="orderKurtaOnWhatsApp('Casual Short Kurta', 599)">
+        Order on WhatsApp
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 stylewithdhaara</p>
+</footer>
+
+<script>
+  // Your existing cart storage and WhatsApp number
+  const whatsappNumber = "918431905840";
+  const cartStorageKey = "dhaaraCart";
+
+  function getCart() {
+    try {
+      const cart = JSON.parse(
+        localStorage.getItem(cartStorageKey) || "[]"
+      );
+      return Array.isArray(cart) ? cart : [];
+    } catch {
+      return [];
+    }
+  }
+
+  function updateCartCount() {
+    const cart = getCart();
+    const count = cart.reduce(
+      (total, item) => total + (Number(item.quantity) || 0), 0
+    );
+
+    const countElement = document.getElementById("cart-count");
+    if (countElement) {
+      countElement.textContent = count;
+    }
+  }
+
+  // Add kurta to the shared cart
+  function addKurtaToCart(name, price, image) {
+    const cart = getCart();
+
+    const existingItem = cart.find(item => item.name === name);
+
+    if (existingItem) {
+      existingItem.quantity = (Number(existingItem.quantity) || 0) + 1;
+    } else {
+      cart.push({
+        name: name,
+        price: price,
+        image: image,
+        quantity: 1
+      });
+    }
+
+    localStorage.setItem(cartStorageKey, JSON.stringify(cart));
+    updateCartCount();
+
+    alert(name + " added to your cart!");
+  }
+
+  // Order an individual kurta on WhatsApp
+  function orderKurtaOnWhatsApp(name, price) {
+    const message =
+      "Hello StyleWithDhaara! I want to order:\n\n" +
+      "Product: " + name + "\n" +
+      "Price: ₹" + price + "\n" +
+      "Quantity: 1\n\n" +
+      "Please share the ordering details.";
+
+    const url =
+      "https://wa.me/" + whatsappNumber +
+      "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+  }
+
+  // Show the existing shared cart quantity
+  updateCartCount();
+</script>
+
+</body>
+</html>

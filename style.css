@@ -5,6 +5,7 @@
   font-family: Arial, sans-serif;
 }
 
+
 /* NAVBAR */
 .navbar {
   display: flex;
@@ -599,7 +600,7 @@ body {
 
     color: #222;
 
-    background: #fff;
+    background: #ffe4ec;
 }
 
 
@@ -944,3 +945,157 @@ footer {
   }
 
 }
+
+.kurta-collection {
+  padding: 40px 5%;
+  text-align: center;
+  background: #fff0f5;
+}
+
+.kurta-collection h1 {
+  color: #b83265;
+  margin-bottom: 10px;
+}
+
+.kurta-collection p {
+  margin-bottom: 20px;
+}
+
+.kurta-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.kurta-card {
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.kurta-card img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+}
+
+.kurta-card h3 {
+  margin-top: 12px;
+  color: #6b2945;
+}
+
+.kurta-card p {
+  margin-top: 8px;
+  color: #b83265;
+  font-weight: bold;
+}
+
+/* Short Kurtas page */
+
+.kurta-heading {
+  text-align: center;
+  padding: 40px 20px;
+  background: #ffe4ec;
+}
+
+.kurta-heading h1 {
+  color: #b83265;
+  margin-bottom: 10px;
+}
+
+.kurta-heading p {
+  color: #75515f;
+}
+
+.kurta-collection {
+  padding: 35px 5%;
+  background: #fff7fa;
+}
+
+.kurta-products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.kurta-card {
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(120, 40, 75, 0.10);
+}
+
+.kurta-card img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+}
+
+.kurta-card h3 {
+  margin: 12px 0 8px;
+  color: #6b2945;
+}
+
+.kurta-price {
+  color: #b83265;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.kurta-cart-btn,
+.kurta-whatsapp-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.kurta-cart-btn {
+  background: #d63384;
+  color: white;
+}
+
+.kurta-cart-btn:hover {
+  background: #ad2165;
+}
+
+.kurta-whatsapp-btn {
+  background: #25d366;
+  color: white;
+}
+
+.kurta-whatsapp-btn:hover {
+  background: #1eae54;
+}
+
+@media (max-width: 768px) {
+  .kurta-products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .kurta-card img {
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kurta-products {
+    grid-template-columns: 1fr;
+  }
+
+  .kurta-card img {
+    height: 450px;
+  }
+}
+

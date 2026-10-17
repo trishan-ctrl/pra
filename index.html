@@ -1,61 +1,102 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>STYLEWITHDHAARA</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Short Kurtas option on Home page only */
+    .short-kurtas-banner {
+      background: #ffe4ec;
+      text-align: center;
+      padding: 35px 20px;
+      margin: 25px 0;
+    }
+
+    .short-kurtas-banner h2 {
+      color: #b83265;
+      margin-bottom: 10px;
+    }
+
+    .short-kurtas-banner p {
+      margin-bottom: 18px;
+      color: #664452;
+    }
+
+    .short-kurtas-btn {
+      display: inline-block;
+      background: #d63384;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .short-kurtas-btn:hover {
+      background: #ad2165;
+    }
+  </style>
 </head>
 <body>
 
 <!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">
-  <img src="image/logo11.jpeg" alt="Logo">
-</div>
+    <img src="image/logo11.jpeg" alt="Logo">
+  </div>
+
   <nav>
-    <a href="#">Home</a>
+    <a href="index.html">Home</a>
     <a href="contact.html">Contact</a>
     <a href="about.html">About Us</a>
     <a href="cart.html" class="cart-link">
-  🛒 Cart <span id="cart-count">0</span>
-</a>
+      🛒 Cart <span id="cart-count">0</span>
+    </a>
   </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-overlay"></div>
 
-    <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-label">
+      STYLEWITHDHAARA
+    </span>
 
-    <div class="hero-content">
+    <h1>
+      Elevate<br>
+      Your Style
+    </h1>
 
-        <span class="hero-label">
-            STYLEWITHDHAARA
-        </span>
+    <p>
+      Discover elegant styles designed
+      for every version of you.
+    </p>
 
-        <h1>
-            Elevate<br>
-            Your Style
-        </h1>
-
-        <p>
-            Discover elegant styles designed
-            for every version of you.
-        </p>
-
-        <a href="#products" class="hero-button">
-            Explore Collection
-            <span>→</span>
-        </a>
-
-    </div>
-
+    <a href="#products" class="hero-button">
+      Explore Collection
+      <span>→</span>
+    </a>
+  </div>
 </section>
 
+<!-- SHORT KURTAS OPTION -->
+<section class="short-kurtas-banner">
+  <h2>Short Kurtas Collection</h2>
+  <p>Discover beautiful short kurtas for your everyday style.</p>
+
+  <a href="short-kurtas.html" class="short-kurtas-btn">
+    Shop Short Kurtas →
+  </a>
+</section>
 
 <!-- PRODUCTS -->
 <section class="products" id="products"></section>
-
 
 <!-- FOOTER -->
 <footer>
