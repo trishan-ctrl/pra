@@ -362,3 +362,20 @@ function scrollToProducts() {
   }
 
 }
+
+function searchProducts() {
+    const input = document.getElementById("productSearch");
+    const searchText = input.value.toLowerCase().trim();
+
+    const products = document.querySelectorAll("#products > *");
+
+    products.forEach(function (product) {
+        const productName = product.textContent.toLowerCase();
+
+        if (productName.includes(searchText)) {
+            product.style.display = "";
+        } else {
+            product.style.display = "none";
+        }
+    });
+}
